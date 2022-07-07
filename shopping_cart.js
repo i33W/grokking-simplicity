@@ -17,6 +17,7 @@ function calc_cart_total() {
   }
   set_cart_total_dom();
   update_shipping_icons();
+  set_tax_dom();
 }
 
 // 무료 배송비 계산하기
@@ -31,4 +32,9 @@ function update_shipping_icons() {
       button.hide_free_shipping_icon();
     }
   }
+}
+
+// 장바구니 금액 합계에 따른 세금 계산하기
+function update_tax_dom() {
+  set_tax_dom(shopping_cart_total * 0.1);
 }
